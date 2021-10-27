@@ -4,10 +4,11 @@ import Input from '../Form/Input';
 import Button from '../Form/Button';
 import useForm from '../../Hooks/useForm';
 import { UserContext } from '../../UserContext';
-import Error from '../../Helpers/Error';
+import Error from '../Helpers/Error';
 
 import styles from './LoginForm.module.css';
 import stylesBtn from '../Form/Button.module.css';
+import Head from '../Helpers/Head';
 
 const LoginForm = () => {
   const username = useForm();
@@ -24,6 +25,7 @@ const LoginForm = () => {
 
   return (
     <section className="animeDown">
+      <Head title="Login"></Head>
       <h1 className="title">Login</h1>
       <form className={styles.form} onSubmit={handleSubmit}>
         <Input label="User" type="text" name="username" {...username} />
@@ -34,7 +36,7 @@ const LoginForm = () => {
         ) : (
           <Button>Sign In</Button>
         )}
-        <Error error={error} />
+        <Error error={error && 'Invalid values'} />
       </form>
       <Link className={styles.perdeu} to="/login/perdeu">
         I don't know my password

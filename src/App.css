@@ -57,6 +57,10 @@ input {
   margin: 0 auto;
 }
 
+.mainContainer {
+  margin-top: 2rem;
+}
+
 .title {
   font-family: var(--main-font-2);
   line-height: 1;
@@ -90,4 +94,18 @@ input {
     opacity: 1;
     transform: initial;
   }
+}
+
+.App{
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh + 10rem);
+}
+
+.AppBody{
+  flex: 1;
+}
+
+.VictoryContainer{
+  height: initial !important;
 }
